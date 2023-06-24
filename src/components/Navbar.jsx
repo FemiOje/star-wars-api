@@ -11,53 +11,71 @@ const Navbar = () => {
     }
 
     return (
-        <>
-            <nav className='fixed flex flex-row top-0 bg-black w-full shadow-lg '>
-                <button className="menu outline-sm" onClick={toggleNav}>
-                    <svg viewBox="0 0 100 80" width="40" height="30" className="self-center">
-                        <rect width="100" height="15" fill="#FFC107"></rect>
-                        <rect y="30" width="100" height="15" fill="#FFC107"></rect>
-                        <rect y="60" width="100" height="15" fill="#FFC107"></rect>
-                    </svg>
-                </button>
+        <div className='relative'>
+            <nav className='flex flex-row bg-black w-screen shadow-lg '>
+                <div className='self-center ml-5'>
+                    <button className="menu outline-sm" onClick={toggleNav}>
+                        <svg viewBox="0 0 100 80" width="40" height="25" className="self-center">
+                            <rect width="100" height="15" fill="#FFC107"></rect>
+                            <rect y="30" width="100" height="15" fill="#FFC107"></rect>
+                            <rect y="60" width="100" height="15" fill="#FFC107"></rect>
+                        </svg>
+                    </button>
+                </div>
 
-                <img src={Logo} alt="logo" className="m-auto" />
+                <div className='m-auto'>
+                    <img src={Logo} alt="logo" />
+                </div>
 
                 {/* toggle for light mode */}
             </nav>
+
             {navOpen &&
-                <div className='bg-black flex flex-col shadow-lg w-full sm:w-[70vw]'>
-                    <div className='bg-black hover:bg-gray-700 transition-500 duration-500'>
-                        <NavLink to='/'>Home</NavLink>
-                    </div>
+                <div className='absolute top-[5rem] h-screen bg-black flex flex-col shadow-lg w-screen sm:w-[30vw]'>
+                    <NavLink className="text-[#FFC107]" to='/' onClick={toggleNav}>
+                        <p className='bg-black py-4 px-6 hover:bg-stone-800 hover:text-white duration-500'>
+                            Home
+                        </p>
+                    </NavLink>
 
-                    <div className='bg-black hover:bg-gray-700 transition-500 duration-500'>
-                        <NavLink to='/films'>Films</NavLink>
-                    </div>
+                    <NavLink className="text-[#FFC107]" to='/films' onClick={toggleNav}>
+                        <p className='bg-black py-4 px-6 hover:bg-stone-800 hover:text-white duration-500'>
+                            Films
+                        </p>
+                    </NavLink>
 
-                    <div className='bg-black hover:bg-gray-700 transition-500 duration-500'>
-                        <NavLink to='/people'>People</NavLink>
-                    </div>
+                    <NavLink className="text-[#FFC107]" to='/people' onClick={toggleNav}>
+                        <p className='bg-black py-4 px-6 hover:bg-stone-800 hover:text-white duration-500'>
+                            People
+                        </p>
+                    </NavLink>
 
-                    <div className='bg-black hover:bg-gray-700 transition-500 duration-500'>
-                        <NavLink to='/planets'>Planets</NavLink>
-                    </div>
+                    <NavLink className="text-[#FFC107]" to='/planets' onClick={toggleNav}>
+                        <p className='bg-black py-4 px-6 hover:bg-stone-800 hover:text-white duration-500'>
+                            Planets
+                        </p>
+                    </NavLink>
 
-                    <div className='bg-black hover:bg-gray-700 transition-500 duration-500'>
-                        <NavLink to='/spaceships'>Spaceships</NavLink>
-                    </div>
+                    <NavLink className="text-[#FFC107]" to='/spaceships' onClick={toggleNav}>
+                        <p className='bg-black py-4 px-6 hover:bg-stone-800 hover:text-white duration-500'>
+                            Spaceships
+                        </p>
+                    </NavLink>
 
-                    <div className='bg-black hover:bg-gray-700 transition-500 duration-500'>
-                        <NavLink to='/species'>Species</NavLink>
-                    </div>
+                    <NavLink className="text-[#FFC107]" to='/species' onClick={toggleNav}>
+                        <p className='bg-black py-4 px-6 hover:bg-stone-800 hover:text-white duration-500'>
+                            Species
+                        </p>
+                    </NavLink>
 
-                    <div className='bg-black hover:bg-gray-700 transition-500 duration-500'>
-                        <NavLink to='/vehicles'>Vehicles</NavLink>
-                    </div>
-
+                    <NavLink className="text-[#FFC107]" to='/vehicles' onClick={toggleNav}>
+                        <p className='bg-black py-4 px-6 hover:bg-stone-800 hover:text-white duration-500'>
+                            Vehicles
+                        </p>
+                    </NavLink>
                 </div>
             }
-        </>
+        </div>
     )
 }
 
