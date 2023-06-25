@@ -8,7 +8,7 @@ import Home from './routes/Home.jsx';
 import Films from './routes/Films.jsx';
 import People from './routes/People.jsx';
 import Planets from './routes/Planets.jsx';
-import Spaceships from './routes/Spaceships.jsx';
+import Starships from './routes/Starships.jsx';
 import Species from './routes/Species.jsx';
 import Vehicles from './routes/Vehicles.jsx';
 
@@ -43,8 +43,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />
       },
       {
-        path: "spaceships",
-        element: <Spaceships />,
+        path: "starships",
+        element: <Starships />,
         errorElement: <ErrorPage />
       },
       {

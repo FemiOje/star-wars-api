@@ -29,7 +29,7 @@ function App() {
         <Outlet />
       </div>
 
-      <footer className='fixed bottom-0 w-screen bg-[#FFC107]'>
+      <footer className='relative bg-[#FFC107]'>
         <p className='text-black font-black text-center'>May the Force be with you</p>
       </footer>
     </main>

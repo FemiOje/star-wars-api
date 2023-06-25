@@ -56,9 +56,9 @@ const Navbar = () => {
                         </p>
                     </NavLink>
 
-                    <NavLink className="text-[#FFC107]" to='/spaceships' onClick={toggleNav}>
+                    <NavLink className="text-[#FFC107]" to='/starships' onClick={toggleNav}>
                         <p className='bg-black py-4 px-6 hover:bg-stone-800 hover:text-white duration-500'>
-                            Spaceships
+                            Starships
                         </p>
                     </NavLink>
 
