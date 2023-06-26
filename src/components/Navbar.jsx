@@ -2,18 +2,10 @@ import { useState } from 'react';
 import Logo from '../assets/svgs/icons8-star-wars-black-orange.svg';
 import { NavLink } from 'react-router-dom';
 import Switcher from "./Switcher";
+import ClickAwayListener from 'react-click-away-listener';
 
 
 const Navbar = () => {
-    const [isDarkMode, setIsDarkMode] = useState(
-        localStorage.getItem('darkMode') === 'true' ? true : false
-    );
-
-    const toggleDarkMode = () => {
-        const updatedMode = !isDarkMode;
-        setIsDarkMode(updatedMode);
-        localStorage.setItem('darkMode', updatedMode.toString());
-    };
 
     const [navOpen, setNavOpen] = useState(false);
     function toggleNav() {
@@ -45,49 +37,51 @@ const Navbar = () => {
             </nav>
 
             {navOpen &&
-                <div className='absolute top-[5rem] h-screen bg-white dark:bg-black flex flex-col shadow-xl divide-y border-y w-screen sm:w-[30vw]'>
-                    <NavLink className="text-[#FFC107]" to='/' onClick={toggleNav}>
-                        <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
-                            Home
-                        </p>
-                    </NavLink>
+                <ClickAwayListener onClickAway={toggleNav}>
+                    <div className='absolute top-[5rem] h-screen bg-white dark:bg-black flex flex-col shadow-xl divide-y border-y w-screen sm:w-[30vw]'>
+                        <NavLink className="text-[#FFC107]" to='/' onClick={toggleNav}>
+                            <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
+                                Home
+                            </p>
+                        </NavLink>
 
-                    <NavLink className="text-[#FFC107]" to='/films' onClick={toggleNav}>
-                        <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
-                            Films
-                        </p>
-                    </NavLink>
+                        <NavLink className="text-[#FFC107]" to='/films' onClick={toggleNav}>
+                            <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
+                                Films
+                            </p>
+                        </NavLink>
 
-                    <NavLink className="text-[#FFC107]" to='/people' onClick={toggleNav}>
-                        <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
-                            People
-                        </p>
-                    </NavLink>
+                        <NavLink className="text-[#FFC107]" to='/people' onClick={toggleNav}>
+                            <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
+                                People
+                            </p>
+                        </NavLink>
 
-                    <NavLink className="text-[#FFC107]" to='/planets' onClick={toggleNav}>
-                        <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
-                            Planets
-                        </p>
-                    </NavLink>
+                        <NavLink className="text-[#FFC107]" to='/planets' onClick={toggleNav}>
+                            <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
+                                Planets
+                            </p>
+                        </NavLink>
 
-                    <NavLink className="text-[#FFC107]" to='/starships' onClick={toggleNav}>
-                        <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
-                            Starships
-                        </p>
-                    </NavLink>
+                        <NavLink className="text-[#FFC107]" to='/starships' onClick={toggleNav}>
+                            <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
+                                Starships
+                            </p>
+                        </NavLink>
 
-                    <NavLink className="text-[#FFC107]" to='/species' onClick={toggleNav}>
-                        <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
-                            Species
-                        </p>
-                    </NavLink>
+                        <NavLink className="text-[#FFC107]" to='/species' onClick={toggleNav}>
+                            <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
+                                Species
+                            </p>
+                        </NavLink>
 
-                    <NavLink className="text-[#FFC107]" to='/vehicles' onClick={toggleNav}>
-                        <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
-                            Vehicles
-                        </p>
-                    </NavLink>
-                </div>
+                        <NavLink className="text-[#FFC107]" to='/vehicles' onClick={toggleNav}>
+                            <p className='py-4 px-6 hover:bg-slate-800 hover:text-white duration-500'>
+                                Vehicles
+                            </p>
+                        </NavLink>
+                    </div>
+                </ClickAwayListener>
             }
         </div>
     )
