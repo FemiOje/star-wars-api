@@ -36,8 +36,8 @@ const Home = () => {
           <button type="button" className="text-white bg-[#FFC107] hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">Vehicles</button>
         </NavLink>
         <div className='py-9'>
-          <p className='text-white'>Background image from <a href='https://www.starwars.com/' className='underline' target="_blank" rel="noopener noreferrer">Star Wars official website</a></p>
-          <p>Site by <a href="http://github.com/FemiOje"className='underline' target="_blank" rel="noopener noreferrer">Oluwafemi Ojetokun</a></p>
+          <p className='drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>Background image from <a href='https://www.starwars.com/' className='underline' target="_blank" rel="noopener noreferrer">Star Wars official website</a></p>
+          <p className='drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>Site by <a href="http://github.com/FemiOje"className='underline' target="_blank" rel="noopener noreferrer">Oluwafemi Ojetokun</a></p>
         </div>
       </div>
 
