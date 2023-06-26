@@ -21,6 +21,7 @@ const Films = () => {
 
   return (
     <div className='bg-slate-100 dark:bg-slate-800 min-h-screen'>
+      <h2 className='text-4xl p-5 text-black dark:text-[#FFC107]'>Films &#8594;</h2>
       {isLoading ? <Loading /> : (
         <>
           <div className="m-auto">
