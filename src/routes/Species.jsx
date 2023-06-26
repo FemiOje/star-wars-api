@@ -19,7 +19,6 @@ const Species = () => {
       })
   }, [])
 
-  console.log("Species data: ", speciesData);
 
   return (
     <div className='bg-slate-100 dark:bg-slate-800 min-h-screen'>
