@@ -1,13 +1,10 @@
-import { NavLink } from "react-router-dom"
 
 const Home = () => {
   return (
-    <div className="">
-      <NavLink className="text-[#FFC107]" to='/'>
-        <button className='bg-black py-4 px-6 hover:bg-stone-800 hover:text-white hover:outline-black duration-500'>
-          Home
-        </button>
-      </NavLink>
+    <div className="bg-slate-100 dark:bg-slate-800 min-h-screen min-h-screen">
+      <div className="text-center">
+        <h3 className="text-[#FFC107]">Star Wars</h3>
+      </div>
     </div>
   )
 }

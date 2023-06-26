@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Loading from '../components/Loading';
 
 const Films = () => {
-
   const [filmsData, setFilmsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,11 +18,9 @@ const Films = () => {
       })
   }, [])
 
-  console.log("FilmsData", filmsData);
-
 
   return (
-    <div>
+    <div className='bg-slate-100 dark:bg-slate-800 min-h-screen'>
       {isLoading ? <Loading /> : (
         <>
           <div className="m-auto">
@@ -41,7 +38,7 @@ const Films = () => {
                         release_date={film.release_date}
                       />)
                   })}
-                </div> : <p className='text-center text-gray-500 font-semibold my-[20vh]'>Please check your internet connection and try again.</p>
+                </div> : <p className='text-center dark:text-gray-500 font-semibold py-[40vh]'>Please check your internet connection and try again.</p>
 
             }
           </div>
@@ -55,7 +52,7 @@ const Films = () => {
 
 const FilmsCard = ({ title, opening_crawl, director, producer, release_date }) => {
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg m-4">
+    <div className="bg-white max-w-sm rounded-lg overflow-hidden shadow-lg m-4">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-base mb-5">

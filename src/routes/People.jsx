@@ -4,6 +4,7 @@ import Loading from '../components/Loading'
 const People = () => {
   const [peopleData, setPeopleData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  
   useEffect(() => {
     setIsLoading(true)
     fetch("https://swapi.dev/api/people")
@@ -18,10 +19,9 @@ const People = () => {
       })
   }, [])
 
-  console.log("People data: ", peopleData);
 
   return (
-    <div>
+    <div className='bg-slate-100 dark:bg-slate-800 min-h-screen'>
       {
         isLoading ? <Loading /> :
           peopleData.length ? <div className="flex flex-wrap justify-center">
@@ -38,7 +38,7 @@ const People = () => {
                   height={person.height}
                 />)
             })}
-          </div> : <p className='text-center text-gray-500 font-semibold my-[20vh]'>Please check your internet connection and try again.</p>
+          </div> : <p className='text-center text-black dark:text-gray-500 font-semibold py-[40vh]'>Please check your internet connection and try again.</p>
 
       }
     </div>
@@ -47,7 +47,7 @@ const People = () => {
 
 const PeopleCard = ({ name, gender, birth_year, eye_color, skin_color, mass, height }) => {
   return (
-    <div className="w-[20rem] rounded-lg overflow-hidden shadow-lg m-4">
+    <div className="bg-white w-[20rem] rounded-lg overflow-hidden shadow-lg m-4">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-5">{name}</div>
 

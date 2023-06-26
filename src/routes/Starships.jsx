@@ -21,7 +21,7 @@ const Starships = () => {
   console.log("starships data: ", starshipsData);
 
   return (
-    <div>
+    <div className='bg-slate-100 dark:bg-slate-800 min-h-screen'>
       {isLoading ? <Loading /> : (
         <>
           <div className="m-auto">
@@ -52,7 +52,7 @@ const Starships = () => {
 
 const StarshipsCard = ({ name, max_atmosphering_speed, model, passengers, starship_class }) => {
   return (
-    <div className="w-screen sm:max-w-sm rounded-lg overflow-hidden shadow-lg m-4">
+    <div className="bg-white w-screen sm:max-w-sm rounded-lg overflow-hidden shadow-lg m-4">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{name}</div>
         <p className="text-gray-700 text-base mb-3">
