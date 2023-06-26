@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import Loading from '../components/Loading';
 
 const Vehicles = () => {
-  const [ vehiclesData, setVehiclesData ] = useState([]);
-  const [ isLoading, setIsLoading ] = useState(true);
+  const [vehiclesData, setVehiclesData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://swapi.dev/api/vehicles")
@@ -17,7 +17,7 @@ const Vehicles = () => {
         setIsLoading(false)
       })
   }, [])
-  
+
   console.log("Vehicles data: ", vehiclesData);
   return (
     <div>
@@ -26,7 +26,7 @@ const Vehicles = () => {
           <div className="m-auto">
             {
               isLoading ? <Loading /> :
-                vehiclesData.length ? <div className="flex flex-wrap justify-start">
+                vehiclesData.length ? <div className="flex flex-wrap justify-center">
                   {vehiclesData.map((specie, id) => {
                     return (
                       <VehiclesCard
@@ -52,13 +52,31 @@ const Vehicles = () => {
 
 const VehiclesCard = ({ name, model, passengers, max_atmosphering_speed, manufacturer, vehicle_class }) => {
   return (
-    <div className="w-screen sm:max-w-sm rounded overflow-hidden shadow-lg m-4">
+    <div className="w-screen sm:max-w-sm rounded-lg overflow-hidden shadow-lg m-4">
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{name}</div>
-        <p className="text-gray-700 text-base">Model: {model}</p>
-        <p className="text-gray-700 text-base">Passengers: {passengers}</p>
-        <p className='text-gray-700 text-base'>Max Speed: {max_atmosphering_speed}km/h</p>
-        <p className='text-gray-700 text-base'>Manufacturer: {manufacturer}</p>
+        <div className="font-bold text-xl mb-5">{name}</div>
+        <p className="text-gray-700 text-base mb-3">
+          <strong>Model: </strong>
+          <br />
+          {model}
+        </p>
+
+        <p className="text-gray-700 text-base mb-3">
+          <strong>Passengers: </strong>
+          <br />
+          {passengers}
+        </p>
+
+        <p className='text-gray-700 text-base mb-3'>
+          <strong>Passengers: </strong>
+          <br />
+          {max_atmosphering_speed}km/h
+        </p>
+        <p className='text-gray-700 text-base mb-3'>
+          <strong>Manufacturer: </strong>
+          <br />
+          {manufacturer}
+        </p>
       </div>
       <div className="px-6 pt-4 pb-2">
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{vehicle_class}</span>

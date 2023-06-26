@@ -3,23 +3,23 @@ import Loading from '../components/Loading';
 
 
 const Species = () => {
-const [ speciesData, setSpeciesData ] = useState([]);
-const [ isLoading, setIsLoading ] = useState(true);
+  const [speciesData, setSpeciesData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-useEffect(() => {
-  fetch("https://swapi.dev/api/species")
-    .then(res => res.json())
-    .then(data => {
-      setSpeciesData(data.results)
-      setIsLoading(false)
-    })
-    .catch(error => {
-      console.log(error)
-      setIsLoading(false)
-    })
-}, [])
+  useEffect(() => {
+    fetch("https://swapi.dev/api/species")
+      .then(res => res.json())
+      .then(data => {
+        setSpeciesData(data.results)
+        setIsLoading(false)
+      })
+      .catch(error => {
+        console.log(error)
+        setIsLoading(false)
+      })
+  }, [])
 
-console.log("Species data: ", speciesData);
+  console.log("Species data: ", speciesData);
 
   return (
     <div>
@@ -28,7 +28,7 @@ console.log("Species data: ", speciesData);
           <div className="m-auto">
             {
               isLoading ? <Loading /> :
-                speciesData.length ? <div className="flex flex-wrap justify-start">
+                speciesData.length ? <div className="flex flex-wrap justify-center">
                   {speciesData.map((specie, id) => {
                     return (
                       <SpeciesCard
@@ -56,14 +56,39 @@ console.log("Species data: ", speciesData);
 
 const SpeciesCard = ({ name, average_height, average_lifespan, language, designation, classification, hair_colors, eye_colors }) => {
   return (
-    <div className="w-screen sm:max-w-sm rounded overflow-hidden shadow-lg m-4">
+    <div className="w-screen sm:max-w-sm rounded-lg overflow-hidden shadow-lg m-4">
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{name}</div>
-        <p className="text-gray-700 text-base">Avg Height: {average_height}cm</p>
-        <p className='text-gray-700 text-base'>Avg Lifespan: {average_lifespan}</p>
-        <p className='text-gray-700 text-base'>Language: {language}</p>
-        <p className='text-gray-700 text-base'>Hair Colors: {hair_colors}</p>
-        <p className='text-gray-700 text-base'>Eye Colors: {eye_colors}</p>
+        <div className="font-bold text-xl mb-5">{name}</div>
+        <p className="text-gray-700 text-base mb-3">
+          <strong>Avg Height: </strong>
+          <br />
+          {average_height}cm
+        </p>
+
+        <p className='text-gray-700 text-base mb-3'>
+          <strong>Avg Lifespan: </strong>
+          <br />
+          {average_lifespan}
+        </p>
+
+        <p className='text-gray-700 text-base mb-3'>
+          <strong>Language: </strong>
+          <br />
+          {language}
+        </p>
+
+        <p className='text-gray-700 text-base mb-3'>
+          <strong>Hair Colors: </strong>
+          <br />
+          {hair_colors}
+        </p>
+
+        <p className='text-gray-700 text-base mb-3'>
+          <strong>Eye Colors: </strong>
+          <br />
+          {eye_colors}
+        </p>
+
       </div>
       <div className="px-6 pt-4 pb-2">
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{designation}</span>

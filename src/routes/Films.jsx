@@ -29,7 +29,7 @@ const Films = () => {
           <div className="m-auto">
             {
               isLoading ? <Loading /> :
-                filmsData.length ? <div className="flex flex-wrap justify-start">
+                filmsData.length ? <div className="flex flex-wrap justify-center">
                   {filmsData.map((film, id) => {
                     return (
                       <FilmsCard
@@ -55,7 +55,7 @@ const Films = () => {
 
 const FilmsCard = ({ title, opening_crawl, director, producer, release_date }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
+    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg m-4">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-base mb-5">
